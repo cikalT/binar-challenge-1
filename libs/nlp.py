@@ -27,7 +27,7 @@ def remove_emojis(text):
     return emoji_pattern.sub(r'', text)
 
 def preprocess_text(text):
-    text = lowercase(text) 
+    # text = lowercase(text) 
     text = remove_punctuation_mark(text)
     text = remove_emojis(text)
     return text
