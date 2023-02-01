@@ -1,9 +1,5 @@
-import sqlite3
-import pandas as pd
-from collections import Counter
 from libs.nlp import preprocess_text, preprocess_file
 from services import AppServiceProject
-from io import BytesIO
 from fastapi.responses import StreamingResponse
 import io
 
