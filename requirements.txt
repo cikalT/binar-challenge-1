@@ -1,0 +1,10 @@
+pydantic
+fastapi
+nltk
+transformers
+uvicorn
+pandas
+huggingface-hub
+regex
+tokenizers
+torch
