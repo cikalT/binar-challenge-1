@@ -3,10 +3,11 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
+
 @app.get("/")
 async def index():
     return JSONResponse(
-        content = {
+        content={
             "ok": True,
             "code": 200,
             "data": {"versioin": "1.0.0"},
@@ -14,5 +15,7 @@ async def index():
         }
     )
 
+
 from routes import cleansing
+
 app.include_router(cleansing.router, tags=["Cleansing"])
