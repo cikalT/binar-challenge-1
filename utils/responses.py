@@ -1,7 +1,7 @@
 from fastapi import status
 from fastapi.responses import JSONResponse
- 
- 
+
+
 def success_handler(data, kwargs):
     content = {
         "ok": True,
@@ -11,8 +11,8 @@ def success_handler(data, kwargs):
     }
     content.update(kwargs)
     return JSONResponse(status_code=status.HTTP_200_OK, content=content)
- 
- 
+
+
 def bad_request_handler(kwargs):
     content = {
         "ok": False,
@@ -21,8 +21,8 @@ def bad_request_handler(kwargs):
     }
     content.update(kwargs)
     return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content=content)
- 
- 
+
+
 def unauthorized_handler(kwargs):
     content = {
         "ok": False,
@@ -31,8 +31,8 @@ def unauthorized_handler(kwargs):
     }
     content.update(kwargs)
     return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content=content)
- 
- 
+
+
 def error_handler(exc):
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

@@ -1,6 +1,7 @@
 import sqlite3
 import pandas as pd
 
+
 def insert_text_to_db(text):
     conn = sqlite3.connect("databases/pure.db")
     c = conn.cursor()
