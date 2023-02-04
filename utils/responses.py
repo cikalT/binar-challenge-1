@@ -39,6 +39,6 @@ def error_handler(exc):
         content={
             "ok": False,
             "code": status.HTTP_500_INTERNAL_SERVER_ERROR,
-            "message": "Internal Server Error",
+            "message": f"Internal Server Error : {exc}",
         },
     )

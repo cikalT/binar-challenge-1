@@ -4,6 +4,7 @@ from fastapi.responses import StreamingResponse
 import io
 
 from services.add_db import insert_text_to_db, insert_to_db_from_csv
+from utils.responses import error_handler
 
 
 class CleansingServices(AppServiceProject):
@@ -33,4 +34,5 @@ class CleansingServices(AppServiceProject):
 
                 return response
         except Exception as e:
+            error_handler(e)
             return self.error_response(e)

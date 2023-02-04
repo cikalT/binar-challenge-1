@@ -1,19 +1,4 @@
 import re
-import pandas as pd
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-
-factory = StemmerFactory()
-stemmer = factory.create_stemmer()
-
-alay_dict = pd.read_csv('data/new_kamusalay.csv', encoding='latin-1', header=None)
-alay_dict = alay_dict.rename(columns={0: 'original', 1: 'replacement'})
-
-id_stopword_dict = pd.read_csv('data/stopwordbahasa.csv', header=None)
-id_stopword_dict = id_stopword_dict.rename(columns={0: 'stopword'})
-
-
-def lowercase(text):
-    return text.lower()
 
 
 def remove_punctuation_mark(text):
@@ -31,7 +16,6 @@ def remove_emojis(text):
 
 
 def preprocess_text(text):
-    # text = lowercase(text) 
     text = remove_punctuation_mark(text)
     text = remove_emojis(text)
     return text
